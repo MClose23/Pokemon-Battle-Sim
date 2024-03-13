@@ -5,7 +5,8 @@ class Battle():
     
     def start_battle():
 
-    def player_turn():
+    def player_turn(self):
+        if 
 
     def opp_turn(): 
 
