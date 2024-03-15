@@ -19,16 +19,16 @@ class Pokemon():
         if self.type1 == other.defeats:
             winner = other
             loser = self
-            print(self.name, "has won the round!")
+            #print(self.name, "has won the round!")
             return winner, loser
         elif other.type1 == self.defeats:
             winner = self
             loser = other
-            print(self.name, "has fainted. You have lost the round.")
+            #print(other.name, "has fainted. You have lost the round.")
             return winner, loser
         elif self.type1 == other.type1:
             winner = random.choice([self, other])
-            print(winner.name, " is the winner.")
+            #print(winner.name, " is the winner.")
 
             if winner == self:
                 return self, other
