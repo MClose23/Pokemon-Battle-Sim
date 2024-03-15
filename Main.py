@@ -23,7 +23,7 @@ Swampert = pokemon.Pokemon("Swampert", "Water", "Muddy Water")
 me = player.Player("Eli")
 me.party.extend([Venusaur, Infernape, Swampert]) ###
 
-them = player.Player("Ash")
+them = player.Player("Matthew")
 them.party.extend([Venusaur, Infernape, Swampert])  ###
 
 #USER CHOOSES POKEMON
@@ -49,6 +49,7 @@ while len(me.party) != 0 and len(them.party) != 0:
     print(cpu_pokemon_choice.name, " used ", cpu_pokemon_choice.attack)
           
     winner, loser = user_pokemon_choice.battle(cpu_pokemon_choice)
+    print(winner.name, "has won the round.")
 
     if loser in them.party:
         them.party.remove(loser)
