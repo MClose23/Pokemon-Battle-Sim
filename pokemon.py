@@ -24,7 +24,7 @@ class Pokemon():
         elif other.type1 == self.defeats:
             winner = self
             loser = other
-            #print(other.name, "has fainted. You have lost the round.")
+            #print(self.name, "has fainted. You have lost the round.")
             return winner, loser
         elif self.type1 == other.type1:
             winner = random.choice([self, other])
