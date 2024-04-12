@@ -2,12 +2,34 @@ import pokemon
 import random
 import player
 
-print("Welcome to Pokemon Battle Simulator!")
-print("Choose Your party of Six Pokemon from the Displayed Pokemon Below.")
+print()
+print("**************** ||| POKEMON BATTLE SIMULATOR ||| ****************")
+print("  - - - - - Program made by Matthew Close and Eli Combs - - - - - ")
+print()
+print('                               ***               ')
+print('                        *****************        ')
+print('                    *************************    ')
+print('                  *****************************  ')
+print('                 ******************************* ')
+print('                *********************************')
+print('                *************       *************')
+print('                ************         ************')
+print('                *          **       **          *')
+print('                *             ** **             *')
+print('                 *                             * ')
+print('                  *                           *  ')
+print('                    **                     **    ')
+print('                        ***           ***        ')
+print('                               ***               ')
+print()
+print()
+print("Choose Your party of 6 Pokemon from the Displayed Pokemon Below...")
+print()
+
 
 #GRASS POKEMON
 Venusaur = pokemon.Pokemon("Venusaur", "Grass", "Poison", "Frenzy Plant", "Venoshock")
-Torterra = pokemon.Pokemon("Toterra", "Grass", "Ground", "Leaf Storm", "Earthquake")
+Torterra = pokemon.Pokemon("Torterra", "Grass", "Ground", "Leaf Storm", "Earthquake")
 Ferrothorn = pokemon.Pokemon("Ferrothorn", "Grass", "Steel", "Power Whip", "Gyro Ball")
 
 #FIRE POKEMON
@@ -31,7 +53,7 @@ Golem = pokemon.Pokemon("Golem", "Rock", "Ground", "Stone Edge", "Stomping Tantr
 Gigalith = pokemon.Pokemon("Gigalith", "Rock", "Rock", "Power Gem", "Rock Blast")
 
 #STEEL POKEMON
-Klingklang = pokemon.Pokemon("Klinklang", "Steel", "Steel", "Gear Grind", "Mirror Shot")
+Klinklang = pokemon.Pokemon("Klinklang", "Steel", "Steel", "Gear Grind", "Mirror Shot")
 Metagross = pokemon.Pokemon("Metagross", "Steel", "Psychic", "Meteor Mash", "Psyshock")
 Mawile = pokemon.Pokemon("Mawile", "Steel", "Fairy", "Iron Head", "Draining Kiss")
 
@@ -63,7 +85,7 @@ Gengar = pokemon.Pokemon("Gengar", "Ghost", "Poison", "Phantom Force", "Sludge W
 #PSYCHIC POKEMON
 Alakazam = pokemon.Pokemon("Alakazam", "Psychic", "Psychic", "Future Sight", "Psywave")
 Gallade = pokemon.Pokemon("Gallade", "Psychic", "Fighting", "Psycho Cut", "Drain Punch")
-Gardevoir = pokemon.Pokemon("Gardevoir", "Psychic", "Poison", "Frenzy Plant", "Venoshock")
+Gardevoir = pokemon.Pokemon("Gardevoir", "Psychic", "Poison", "Psychic", "Dazzling Gleam")
 
 #FAIRY POKEMON
 Clefable = pokemon.Pokemon("Clefable", "Fairy", "Poison", "Moonblast", "Disarming Voice")
@@ -96,21 +118,36 @@ Braviary = pokemon.Pokemon("Braviary", "Normal", "Flying", "Thrash", "Sky Drop")
 Diggersby = pokemon.Pokemon("Diggersby", "Normal", "Ground", "Giga Impact", "Scorching Sands")
 
 
-pokemon_list = [Venusaur, Torterra, Ferrothorn, Charizard, Infernape, Magcargo, Empoleon, Swampert, Lapras, Hippowdon, Rhyperior, Gliscor, Aerodactyl, Golem, Gigalith, Klingklang, Metagross, Mawile, Glaceon, Walrein, Mamoswine, Galarian_Slowking, Toxicroak, Drapion, Pikachu, Heliolisk, Magnezone, Weavile, Scrafty, Honchkrow, Chandelure, Trevenant, Gengar, Alakazam, Gallade, Gardevoir, Clefable, Togekiss, Tinkaton, Garchomp, Dragonite, Haxorus, Lucario, Medicham, Machamp, Altaria, Staraptor, Drifblim, Accelgor, Yanmega, Scizor, Snorlax, Braviary, Diggersby]
-pokemon_names = ["venusaur", "torterra", "ferrothorn", "charizard", "infernape", "magcargo", "empoleon", "swampert", "lapras", "hippowdon", "rhyperior", "gliscor", "aerodactyl", "golem", "gigalith", "klingklang", "metagross", "mawile", "glaceon", "walrein", "mamoswine", "galarian slowking", "toxicroak", "drapion", "pikachu", "heliolisk", "magnezone", "weavile", "scrafty", "honchkrow", "chandelure", "trevenant", "gengar", "alakazam", "gallade", "gardevoir", "clefable", "togekiss", "tinkaton", "garchomp", "dragonite", "haxorus", "lucario", "medicham", "machamp", "altaria", "staraptor", "drifblim", "accelgor", "yanmega", "scizor", "snorlax", "braviary", "diggersby"]
+pokemon_list = [Venusaur, Torterra, Ferrothorn, Charizard, Infernape, Magcargo, Empoleon, Swampert, Lapras, 
+                Hippowdon, Rhyperior, Gliscor, Aerodactyl, Golem, Gigalith, Klinklang, Metagross, Mawile, 
+                Glaceon, Walrein, Mamoswine, Galarian_Slowking, Toxicroak, Drapion, Pikachu, Heliolisk, Magnezone, 
+                Weavile, Scrafty, Honchkrow, Chandelure, Trevenant, Gengar, Alakazam, Gallade, Gardevoir, 
+                Clefable, Togekiss, Tinkaton, Garchomp, Dragonite, Haxorus, Lucario, Medicham, Machamp, 
+                Altaria, Staraptor, Drifblim, Accelgor, Yanmega, Scizor, Snorlax, Braviary, Diggersby]
+pokemon_names = ["venusaur", "torterra", "ferrothorn", "charizard", "infernape", "magcargo", "empoleon", "swampert", "lapras", "hippowdon", "rhyperior", "gliscor", "aerodactyl", "golem", "gigalith", "klinklang", "metagross", "mawile", "glaceon", "walrein", "mamoswine", "galarian slowking", "toxicroak", "drapion", "pikachu", "heliolisk", "magnezone", "weavile", "scrafty", "honchkrow", "chandelure", "trevenant", "gengar", "alakazam", "gallade", "gardevoir", "clefable", "togekiss", "tinkaton", "garchomp", "dragonite", "haxorus", "lucario", "medicham", "machamp", "altaria", "staraptor", "drifblim", "accelgor", "yanmega", "scizor", "snorlax", "braviary", "diggersby"]
 
 ### EXTEND 6 INPUT POKEMON FROM AN INITIAL EMPTY LIST (POKEMON PARTY) ###
 #PLAYERS CREATED
 me = player.Player("Eli")
+for i, item in enumerate(pokemon_list, 1):
+        print(item, end='\n' if i % 9 == 0 else ' | ')
+print()
 while len(me.party) < 6:
-    for p in pokemon_list:
-        print(p.name, end=" ")
-    print()
-    print()
-    user_choice = input("Select a pokemon from the list:").lower()
+    if len(me.party) == 0:
+        user_choice = input("Select your 1st pokemon from the list: ").lower()
+    elif 0 < len(me.party) < 2:
+        user_choice = input("Select your 2nd pokemon from the list: ").lower()
+    elif 1 < len(me.party) < 3:
+        user_choice = input("Select your 3rd pokemon from the list: ").lower()
+    elif 2 < len(me.party) < 4:
+        user_choice = input("Select your 4th pokemon from the list: ").lower()
+    elif 3 < len(me.party) < 5:
+        user_choice = input("Select your 5th pokemon from the list: ").lower()
+    elif 4 < len(me.party) < 6:
+        user_choice = input("Select your final pokemon from the list: ").lower()
     while user_choice not in pokemon_names:
-        print("Your Pokemon Does Not Exist On This List")
-        user_choice = input("Select your next Pokemon to battle: ").lower()
+        print("Your Pokemon Does Not Exist On This List!")
+        user_choice = input("Please select your next Pokemon: ").lower()
     ###TODO: match the string to a name and add to the user's party###
     for p in pokemon_list:
         if p.name.lower() == user_choice:
@@ -125,7 +162,7 @@ while len(them.party) < 7:
     them.party.append(p)
     pokemon_list.remove(p)
 
-intro_string = "Welcome to Pokemon Battle Simulator!"
+intro_string = ""
 #USER CHOOSES POKEMON
 
 me.names = []
@@ -135,7 +172,7 @@ for p in me.party:
 print(intro_string)
 print("Your 6 Pokemon are:")
 for p in me.party:
-    print(p, end = ' ')
+    print(p, end = ' | ')
 print()
 #GAMEPLAY BATTLEs
 while len(me.party) != 0 and len(them.party) != 0:
@@ -147,7 +184,7 @@ while len(me.party) != 0 and len(them.party) != 0:
     user_pokemon_name_choice = input("Select your next Pokemon to battle: ").lower()
     ### INSTEAD OF "PLACEHOLDER", PROMPT THE USER TO INSERT A VALID POKEMON NAME IF 1 OF THE 3 POKEMON HAVE BEEN MISPELLED OR REPEATED (THEY HAVE ALREADY FAINTED) ###
     while user_pokemon_name_choice not in me.names:
-        print("There is an error in your Pokemon Name.")
+        print("That Pokemon is not in your Party")
         user_pokemon_name_choice = input("Select your next Pokemon to battle: ").lower()
     #user_pokemon_choice = pokemon.Pokemon("Pokemon", "type1", "type2", "attack1", "attack2")
     for p in me.party:
@@ -178,7 +215,7 @@ while len(me.party) != 0 and len(them.party) != 0:
         me.names.remove(name)
     print("The pokemon left in your party are:")
     for p in me.party:
-        print(p, end = ' ')
+        print(p, end = ' | ')
     print()
 
 

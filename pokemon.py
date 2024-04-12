@@ -36,6 +36,7 @@ class Pokemon():
             winner = other
             loser = self
             print("Their", winner.name, "has won the round.")
+            print("Your", loser.name, "has fainted." )
             return winner, loser
         elif other.type1 in self.defeats1:
             winner = self
@@ -43,22 +44,40 @@ class Pokemon():
             print("Your", winner.name, "has won the round.")
             return winner, loser
         else:
+            print("The Pokemon are evenly matched and attack again!")
             if self.type2 in other.defeats2:
                 winner = other
                 loser = self
+                print("Your", loser.name, "used", loser.attack2)
+                print("Their", winner.name, "used", winner.attack2)
                 print("Their", winner.name, "has won the round.")
+                print("Your", loser.name, "has fainted." )
                 return winner, loser
             elif other.type2 in self.defeats2:
                 winner = self
                 loser = other
+                print("Your", winner.name, "used", winner.attack2)
+                print("Their", loser.name, "used", loser.attack2)
                 print("Your", winner.name, "has won the round.")
                 return winner, loser
             else:
-                winner = random.choice([self, other])
+                result = [self, other]
+                winner = random.choice(result)
                 if winner == self:
+                    winner = self
+                    loser = other
+                    print("Your", winner.name, "used", winner.attack2)
+                    print("Their", loser.name, "used", loser.attack2)
+                    print("It is still even! We'll see who's tougher...")
                     print("Your", winner.name, "has won the round.")
                 else:
+                    winner = other
+                    loser = self
+                    print("Your", loser.name, "used", loser.attack2)
+                    print("Their", winner.name, "used", winner.attack2)
+                    print("It is still even! We'll see who's tougher...")
                     print("Their", winner.name, "has won the round")
+                    print("Your", loser.name, "has fainted." )
 
             if winner == self:
                 return self, other
