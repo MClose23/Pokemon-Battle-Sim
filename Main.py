@@ -2,6 +2,9 @@ import pokemon
 import random
 import player
 
+print("Welcome to Pokemon Battle Simulator!")
+print("Choose Your party of Six Pokemon from the Displayed Pokemon Below.")
+
 #GRASS POKEMON
 Venusaur = pokemon.Pokemon("Venusaur", "Grass", "Poison", "Frenzy Plant", "Venoshock")
 Torterra = pokemon.Pokemon("Toterra", "Grass", "Ground", "Leaf Storm", "Earthquake")
@@ -92,18 +95,22 @@ Snorlax  = pokemon.Pokemon("Snorlax", "Normal", "Normal", "Body Slam", "Snore")
 Braviary = pokemon.Pokemon("Braviary", "Normal", "Flying", "Thrash", "Sky Drop")
 Diggersby = pokemon.Pokemon("Diggersby", "Normal", "Ground", "Giga Impact", "Scorching Sands")
 
+
 pokemon_list = [Venusaur, Torterra, Ferrothorn, Charizard, Infernape, Magcargo, Empoleon, Swampert, Lapras, Hippowdon, Rhyperior, Gliscor, Aerodactyl, Golem, Gigalith, Klingklang, Metagross, Mawile, Glaceon, Walrein, Mamoswine, Galarian_Slowking, Toxicroak, Drapion, Pikachu, Heliolisk, Magnezone, Weavile, Scrafty, Honchkrow, Chandelure, Trevenant, Gengar, Alakazam, Gallade, Gardevoir, Clefable, Togekiss, Tinkaton, Garchomp, Dragonite, Haxorus, Lucario, Medicham, Machamp, Altaria, Staraptor, Drifblim, Accelgor, Yanmega, Scizor, Snorlax, Braviary, Diggersby]
-pokemon_names = ["Venusaur", "Torterra", "Ferrothorn", "Charizard", "Infernape", "Magcargo", "Empoleon", "Swampert", "Lapras", "Hippowdon", "Rhyperior", "Gliscor", "Aerodactyl", "Golem", "Gigalith", "Klingklang", "Metagross", "Mawile", "Glaceon", "Walrein", "Mamoswine", "Galarian Slowking", "Toxicroak", "Drapion", "Pikachu", "Heliolisk", "Magnezone", "Weavile", "Scrafty", "Honchkrow", "Chandelure", "Trevenant", "Gengar", "Alakazam", "Gallade", "Gardevoir", "Clefable", "Togekiss", "Tinkaton", "Garchomp", "Dragonite", "Haxorus", "Lucario", "Medicham", "Machamp", "Altaria", "Staraptor", "Drifblim", "Accelgor", "Yanmega", "Scizor", "Snorlax", "Braviary", "Diggersby"]
+pokemon_names = ["venusaur", "torterra", "ferrothorn", "charizard", "infernape", "magcargo", "empoleon", "swampert", "lapras", "hippowdon", "rhyperior", "gliscor", "aerodactyl", "golem", "gigalith", "klingklang", "metagross", "mawile", "glaceon", "walrein", "mamoswine", "galarian slowking", "toxicroak", "drapion", "pikachu", "heliolisk", "magnezone", "weavile", "scrafty", "honchkrow", "chandelure", "trevenant", "gengar", "alakazam", "gallade", "gardevoir", "clefable", "togekiss", "tinkaton", "garchomp", "dragonite", "haxorus", "lucario", "medicham", "machamp", "altaria", "staraptor", "drifblim", "accelgor", "yanmega", "scizor", "snorlax", "braviary", "diggersby"]
 
 ### EXTEND 6 INPUT POKEMON FROM AN INITIAL EMPTY LIST (POKEMON PARTY) ###
 #PLAYERS CREATED
 me = player.Player("Eli")
-while len(me.party) < 7:
+while len(me.party) < 6:
     for p in pokemon_list:
         print(p.name, end=" ")
     print()
     print()
     user_choice = input("Select a pokemon from the list:").lower()
+    while user_choice not in pokemon_names:
+        print("Your Pokemon Does Not Exist On This List")
+        user_choice = input("Select your next Pokemon to battle: ").lower()
     ###TODO: match the string to a name and add to the user's party###
     for p in pokemon_list:
         if p.name.lower() == user_choice:
@@ -126,6 +133,10 @@ for p in me.party:
     me.names.append(p.name.lower())
 
 print(intro_string)
+print("Your 6 Pokemon are:")
+for p in me.party:
+    print(p, end = ' ')
+print()
 #GAMEPLAY BATTLEs
 while len(me.party) != 0 and len(them.party) != 0:
     #####FOR TESTING####
@@ -148,6 +159,7 @@ while len(me.party) != 0 and len(them.party) != 0:
     #cpu_pokemon_choice = random.choice(them.party)
     #cpu_pokemon_choice = Swampert
 
+    
     #BATTLE
     print("##########")
     print("BATTLE!")
@@ -160,10 +172,14 @@ while len(me.party) != 0 and len(them.party) != 0:
 
     if loser in them.party:
         them.party.remove(loser)
-    if loser in me.party:
+    elif loser in me.party:
         me.party.remove(loser)
         name = loser.name.lower()
         me.names.remove(name)
+    print("The pokemon left in your party are:")
+    for p in me.party:
+        print(p, end = ' ')
+    print()
 
 
 if len(them.party) == 0:
