@@ -32,23 +32,23 @@ class Pokemon():
 
     ### DESCRIBES AND PRINTS OUT WHAT HAPPENS WHEN ONE TYPE FACES ANOTHER ###
     def battle(self, other):
-        if self.type1 == other.defeats1:
+        if self.type1 in other.defeats1:
             winner = other
             loser = self
             print("Their", winner.name, "has won the round.")
             return winner, loser
-        elif other.type1 == self.defeats1:
+        elif other.type1 in self.defeats1:
             winner = self
             loser = other
             print("Your", winner.name, "has won the round.")
             return winner, loser
         else:
-            if self.type2 == other.defeats2:
+            if self.type2 in other.defeats2:
                 winner = other
                 loser = self
                 print("Their", winner.name, "has won the round.")
                 return winner, loser
-            elif other.type2 == self.defeats2:
+            elif other.type2 in self.defeats2:
                 winner = self
                 loser = other
                 print("Your", winner.name, "has won the round.")
@@ -67,6 +67,8 @@ class Pokemon():
             #print(random.choice(['It is a draw, but your pokemon has still come out on top!', 'It is a draw but your Pokemon did not quite make it.']))
             #print(winner.name, " is the winner.")
     
-
+    ## TODO: decide how to print pokemon
+    def __str__(self):
+        return self.name
     
     

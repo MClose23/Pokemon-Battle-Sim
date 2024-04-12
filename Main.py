@@ -92,39 +92,69 @@ Porygon  = pokemon.Pokemon("Porygon", "Normal", "Normal", "Tri Attack", "Hyper B
 Braviary = pokemon.Pokemon("Braviary", "Normal", "Flying", "Thrash", "Sky Drop")
 Diggersby = pokemon.Pokemon("Diggersby", "Normal", "Ground", "Giga Impact", "Scorching Sands")
 
+###TODO: add each pokemon to the list
+pokemon_list =[]
+###TODO: add each pokemon name to the list
+pokemln_names = []
 
 ### EXTEND 6 INPUT POKEMON FROM AN INITIAL EMPTY LIST (POKEMON PARTY) ###
 #PLAYERS CREATED
 me = player.Player("Eli")
-me.party.extend([Venusaur, Infernape, Swampert]) ###
+while len(me.party) < 7:
+    for p in pokemon_list:
+        print(p.name)
+    user_choice = input(print("Select a pokemon from the list:")).lower()
+    ###TODO: match the string to a name and add to the user's parts
+
+#TODO: Delete
+#me.party.extend([Venusaur, Infernape, Swampert]) ###
 
 them = player.Player("Matthew")
-them.party.extend([Venusaur, Infernape, Swampert])  ###
+#TODO: Delete
+#them.party.extend([Venusaur, Infernape, Swampert])  ###
+
+###TODO: Random choice from a list
+while len(them.party) < 7:
+    p = random.choice(pokemon_list)
+    pokemon_list.remove(p)
 
 intro_string = "Welcome to Pokemon Battle Simulator!"
 #USER CHOOSES POKEMON
+##TODO: DELETE
 user_pokemon_party = [Venusaur.name.lower(), Infernape.name.lower(), Swampert.name.lower()]
 
+me.names = []
+for p in me.party:
+    me.names.append(p.name.lower())
+
 print(intro_string)
-#GAMEPLAY BATTLE
+#GAMEPLAY BATTLEs
 while len(me.party) != 0 and len(them.party) != 0:
-    user_pokemon_name_choice = input("Select your next Pokemon to battle: ")
+    #####FOR TESTING####
+    ###TODO: Move and change
+    cpu_pokemon_choice = random.choice(them.party)
+    print("Their choice:", cpu_pokemon_choice.name)
+
+
+    user_pokemon_name_choice = input("Select your next Pokemon to battle: ").lower()
     ### INSTEAD OF "PLACEHOLDER", PROMPT THE USER TO INSERT A VALID POKEMON NAME IF 1 OF THE 3 POKEMON HAVE BEEN MISPELLED OR REPEATED (THEY HAVE ALREADY FAINTED) ###
-    # if user_pokemon_name_choice not in me.party:
-    #     print("There is an error in your Pokemon Name.")
-    #     user_pokemon_name_choice = input("Select your next Pokemon to battle: ")
-    user_pokemon_choice = pokemon.Pokemon("Pokemon", "type1", "type2", "attack1", "attack2")
+    while user_pokemon_name_choice not in me.names:
+        print("There is an error in your Pokemon Name.")
+        user_pokemon_name_choice = input("Select your next Pokemon to battle: ").lower()
+    #user_pokemon_choice = pokemon.Pokemon("Pokemon", "type1", "type2", "attack1", "attack2")
     for p in me.party:
-        if p.name == user_pokemon_name_choice:
+        if p.name.lower() == user_pokemon_name_choice:
             user_pokemon_choice = p
+            break
 
     #COMPUTER RANDOMLY CHOOSES POKEMON
-    cpu_pokemon_choice = random.choice(them.party)
+    #cpu_pokemon_choice = random.choice(them.party)
+    #cpu_pokemon_choice = Swampert
 
     #BATTLE
     print("BATTLE!")
-    print("Your", user_pokemon_choice.name, "used", user_pokemon_choice.attack)
-    print("Their", cpu_pokemon_choice.name, "used", cpu_pokemon_choice.attack)
+    print("Your", user_pokemon_choice.name, "used", user_pokemon_choice.attack1)
+    print("Their", cpu_pokemon_choice.name, "used", cpu_pokemon_choice.attack1)
           
     winner, loser = user_pokemon_choice.battle(cpu_pokemon_choice)
       
@@ -134,6 +164,8 @@ while len(me.party) != 0 and len(them.party) != 0:
         them.party.remove(loser)
     if loser in me.party:
         me.party.remove(loser)
+        name = loser.name.lower()
+        me.names.remove(name)
 
 
 if len(them.party) == 0:
