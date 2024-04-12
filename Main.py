@@ -101,11 +101,11 @@ me = player.Player("Eli")
 while len(me.party) < 7:
     for p in pokemon_list:
         print(p.name)
-    user_choice = input(print("Select a pokemon from the list:")).lower()
+    user_choice = input("Select a pokemon from the list:").lower()
     ###TODO: match the string to a name and add to the user's party###
-    for p in me.party:
-        if p.name.lower() == user_pokemon_name_choice:
-            user_pokemon_choice = p
+    for p in pokemon_list:
+        if p.name.lower() == user_choice:
+            me.party.append(p)
             break
 
 them = player.Player("Matthew")
