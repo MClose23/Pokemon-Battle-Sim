@@ -113,6 +113,7 @@ them = player.Player("Matthew")
 ###TODO: Random choice from a list
 while len(them.party) < 7:
     p = random.choice(pokemon_list)
+    them.party.append(p)
     pokemon_list.remove(p)
 
 intro_string = "Welcome to Pokemon Battle Simulator!"
