@@ -115,7 +115,6 @@ them = player.Player("Matthew")
 ###TODO: Random choice from a list
 while len(them.party) < 7:
     p = random.choice(pokemon_list)
-    #added to fix problem
     them.party.append(p)
     pokemon_list.remove(p)
 
