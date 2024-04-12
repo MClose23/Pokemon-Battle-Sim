@@ -88,14 +88,12 @@ Yanmega = pokemon.Pokemon("Yanmega", "Bug", "Flying", "Bug Bite", "Air Cutter")
 Scizor = pokemon.Pokemon("Scizor", "Bug", "Steel", "X-Scissor", "Bullet Punch")
 
 #NORMAL POKEMON
-Porygon  = pokemon.Pokemon("Porygon", "Normal", "Normal", "Tri Attack", "Hyper Beam")
+Snorlax  = pokemon.Pokemon("Snorlax", "Normal", "Normal", "Body Slam", "Snore")
 Braviary = pokemon.Pokemon("Braviary", "Normal", "Flying", "Thrash", "Sky Drop")
 Diggersby = pokemon.Pokemon("Diggersby", "Normal", "Ground", "Giga Impact", "Scorching Sands")
 
-###TODO: add each pokemon to the list
-pokemon_list =[]
-###TODO: add each pokemon name to the list
-pokemln_names = []
+pokemon_list = [Venusaur, Torterra, Ferrothorn, Charizard, Infernape, Magcargo, Empoleon, Swampert, Lapras, Hippowdon, Rhyperior, Gliscor, Aerodactyl, Golem, Gigalith, Klingklang, Metagross, Mawile, Glaceon, Walrein, Mamoswine, Galarian_Slowking, Toxicroak, Drapion, Pikachu, Heliolisk, Magnezone, Weavile, Scrafty, Honchkrow, Chandelure, Trevenant, Gengar, Alakazam, Gallade, Gardevoir, Clefable, Togekiss, Tinkaton, Garchomp, Dragonite, Haxorus, Lucario, Medicham, Machamp, Altaria, Staraptor, Drifblim, Accelgor, Yanmega, Scizor, Snorlax, Braviary, Diggersby]
+pokemon_names = ["Venusaur", "Torterra", "Ferrothorn", "Charizard", "Infernape", "Magcargo", "Empoleon", "Swampert", "Lapras", "Hippowdon", "Rhyperior", "Gliscor", "Aerodactyl", "Golem", "Gigalith", "Klingklang", "Metagross", "Mawile", "Glaceon", "Walrein", "Mamoswine", "Galarian Slowking", "Toxicroak", "Drapion", "Pikachu", "Heliolisk", "Magnezone", "Weavile", "Scrafty", "Honchkrow", "Chandelure", "Trevenant", "Gengar", "Alakazam", "Gallade", "Gardevoir", "Clefable", "Togekiss", "Tinkaton", "Garchomp", "Dragonite", "Haxorus", "Lucario", "Medicham", "Machamp", "Altaria", "Staraptor", "Drifblim", "Accelgor", "Yanmega", "Scizor", "Snorlax", "Braviary", "Diggersby"]
 
 ### EXTEND 6 INPUT POKEMON FROM AN INITIAL EMPTY LIST (POKEMON PARTY) ###
 #PLAYERS CREATED
@@ -104,14 +102,13 @@ while len(me.party) < 7:
     for p in pokemon_list:
         print(p.name)
     user_choice = input(print("Select a pokemon from the list:")).lower()
-    ###TODO: match the string to a name and add to the user's parts
-
-#TODO: Delete
-#me.party.extend([Venusaur, Infernape, Swampert]) ###
+    ###TODO: match the string to a name and add to the user's party###
+    for p in me.party:
+        if p.name.lower() == user_pokemon_name_choice:
+            user_pokemon_choice = p
+            break
 
 them = player.Player("Matthew")
-#TODO: Delete
-#them.party.extend([Venusaur, Infernape, Swampert])  ###
 
 ###TODO: Random choice from a list
 while len(them.party) < 7:
@@ -120,8 +117,6 @@ while len(them.party) < 7:
 
 intro_string = "Welcome to Pokemon Battle Simulator!"
 #USER CHOOSES POKEMON
-##TODO: DELETE
-user_pokemon_party = [Venusaur.name.lower(), Infernape.name.lower(), Swampert.name.lower()]
 
 me.names = []
 for p in me.party:
@@ -133,8 +128,7 @@ while len(me.party) != 0 and len(them.party) != 0:
     #####FOR TESTING####
     ###TODO: Move and change
     cpu_pokemon_choice = random.choice(them.party)
-    print("Their choice:", cpu_pokemon_choice.name)
-
+    print("The opponent has chosen", cpu_pokemon_choice.name)
 
     user_pokemon_name_choice = input("Select your next Pokemon to battle: ").lower()
     ### INSTEAD OF "PLACEHOLDER", PROMPT THE USER TO INSERT A VALID POKEMON NAME IF 1 OF THE 3 POKEMON HAVE BEEN MISPELLED OR REPEATED (THEY HAVE ALREADY FAINTED) ###
