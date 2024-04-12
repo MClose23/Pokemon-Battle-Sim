@@ -100,7 +100,9 @@ pokemon_names = ["Venusaur", "Torterra", "Ferrothorn", "Charizard", "Infernape",
 me = player.Player("Eli")
 while len(me.party) < 7:
     for p in pokemon_list:
-        print(p.name)
+        print(p.name, end=" ")
+    print()
+    print()
     user_choice = input("Select a pokemon from the list:").lower()
     ###TODO: match the string to a name and add to the user's party###
     for p in pokemon_list:
@@ -113,6 +115,8 @@ them = player.Player("Matthew")
 ###TODO: Random choice from a list
 while len(them.party) < 7:
     p = random.choice(pokemon_list)
+    #added to fix problem
+    them.party.append(p)
     pokemon_list.remove(p)
 
 intro_string = "Welcome to Pokemon Battle Simulator!"
@@ -146,6 +150,7 @@ while len(me.party) != 0 and len(them.party) != 0:
     #cpu_pokemon_choice = Swampert
 
     #BATTLE
+    print("##########")
     print("BATTLE!")
     print("Your", user_pokemon_choice.name, "used", user_pokemon_choice.attack1)
     print("Their", cpu_pokemon_choice.name, "used", cpu_pokemon_choice.attack1)
