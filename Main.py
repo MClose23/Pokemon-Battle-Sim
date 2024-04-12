@@ -1,24 +1,99 @@
 import pokemon
-#import attack
-#import primary
 import random
 import player
 
-#THE 3 PRIMARY TYPES
-# Grass = primary.Primary("Grass")
-# Fire = primary.Primary("Fire")
-# Water = primary.Primary("Water")
+#GRASS POKEMON
+Venusaur = pokemon.Pokemon("Venusaur", "Grass", "Poison", "Frenzy Plant", "Venoshock")
+Torterra = pokemon.Pokemon("Toterra", "Grass", "Ground", "Leaf Storm", "Earthquake")
+Ferrothorn = pokemon.Pokemon("Ferrothorn", "Grass", "Steel", "Power Whip", "Gyro Ball")
 
-#ATTACKS ASSOCIATED WITH TYPE PAIR
-# Ven_Attack = attack.Attack("Frenzy Plant", "Venoshock", "Grass", "Poison")
-# Inf_Attack = attack.Attack("Flare Blitz", "Close Combat", "Fire", "Fighting")
-# Smp_Attack = attack.Attack("Muddy Water", "Mud Bomb", "Water", "Ground")
+#FIRE POKEMON
+Charizard = pokemon.Pokemon("Charizard", "Fire", "Flying", "Blast Burn", "Air Slash")
+Infernape = pokemon.Pokemon("Infernape", "Fire", "Fighting", "Flare Blitz", "Close Combat")
+Magcargo = pokemon.Pokemon("Magcargo", "Fire", "Rock", "Flamethrower", "Rock Slide")
 
-#POKEMON CREATED
-Venusaur = pokemon.Pokemon("Venusaur", "Grass", "Frenzy Plant")
-Infernape = pokemon.Pokemon("Infernape", "Fire", "Flare Blitz")
-Swampert = pokemon.Pokemon("Swampert", "Water", "Muddy Water")
+#WATER POKEMON
+Empoleon = pokemon.Pokemon("Empoleon", "Water", "Steel", "Hydro Cannon", "Metal Claw")
+Swampert = pokemon.Pokemon("Swampert", "Water", "Ground", "Muddy Water", "Mud Bomb")
+Lapras = pokemon.Pokemon("Lapras", "Water", "Ice", "Hydro Pump", "Sheer Cold")
 
+#GROUND POKEMON
+Hippowdon = pokemon.Pokemon("Hippowdon", "Ground", "Ground", "Bulldoze", "Earth Power")
+Rhyperior = pokemon.Pokemon("Rhyperior", "Ground", "Rock", "Drill Run", "Rock Wrecker")
+Gliscor = pokemon.Pokemon("Gliscor", "Ground", "Flying", "High Horsepower", "Aerial Ace")
+
+#ROCK POKEMON
+Aerodactyl = pokemon.Pokemon("Aerodactyl", "Rock", "Flying", "Ancient Power", "Wing Attack")
+Golem = pokemon.Pokemon("Golem", "Rock", "Ground", "Stone Edge", "Stomping Tantrum")
+Gigalith = pokemon.Pokemon("Gigalith", "Rock", "Rock", "Power Gem", "Rock Blast")
+
+#STEEL POKEMON
+Klingklang = pokemon.Pokemon("Klinklang", "Steel", "Steel", "Gear Grind", "Mirror Shot")
+Metagross = pokemon.Pokemon("Metagross", "Steel", "Psychic", "Meteor Mash", "Psyshock")
+Mawile = pokemon.Pokemon("Mawile", "Steel", "Fairy", "Iron Head", "Draining Kiss")
+
+#ICE POKEMON
+Glaceon = pokemon.Pokemon("Glaceon", "Ice", "Ice", "Freeze-Dry", "Ice Shard")
+Walrein = pokemon.Pokemon("Walrein", "Ice", "Water", "Ice Fang", "Brine")
+Mamoswine = pokemon.Pokemon("Mamoswine", "Ice", "Ground", "Blizzard", "Sand Tomb")
+
+#POISON POKEMON
+Galarian_Slowking = pokemon.Pokemon("Galarian Slowking", "Poison", "Psychic", "Acid", "Confusion")
+Toxicroak = pokemon.Pokemon("Toxicroak", "Poison", "Fighting", "Sludge Bomb", "Brick Break")
+Drapion = pokemon.Pokemon("Drapion", "Poison", "Dark", "Cross Poison", "Crunch")
+
+#ELECTRIC POKEMON
+Pikachu = pokemon.Pokemon("Pikachu", "Electric", "Electric", "Wild Charge", "Thunder Bolt")
+Heliolisk = pokemon.Pokemon("Heliolisk", "Electric", "Normal", "Thunder", "Razor Wind")
+Magnezone = pokemon.Pokemon("Magnezone", "Electric", "Steel", "Zap Cannon", "Flash Cannon")
+
+#DARK POKEMON
+Weavile = pokemon.Pokemon("Weavile", "Dark", "Ice", "Night Slash", "Avalanche")
+Scrafty = pokemon.Pokemon("Scrafty", "Dark", "Fighting", "Beat Up", "Low Sweep")
+Honchkrow = pokemon.Pokemon("Honchkrow", "Dark", "Flying", "Dark Pulse", "Fly")
+
+#GHOST POKEMON
+Chandelure = pokemon.Pokemon("Chandelure", "Ghost", "Fire", "Shadow Ball", "Overheat")
+Trevenant = pokemon.Pokemon("Trevenant", "Ghost", "Grass", "Shadow Claw", "Wood Hammer")
+Gengar = pokemon.Pokemon("Gengar", "Ghost", "Poison", "Phantom Force", "Sludge Wave")
+
+#PSYCHIC POKEMON
+Alakazam = pokemon.Pokemon("Alakazam", "Psychic", "Psychic", "Future Sight", "Psywave")
+Gallade = pokemon.Pokemon("Gallade", "Psychic", "Fighting", "Psycho Cut", "Drain Punch")
+Gardevoir = pokemon.Pokemon("Gardevoir", "Psychic", "Poison", "Frenzy Plant", "Venoshock")
+
+#FAIRY POKEMON
+Clefable = pokemon.Pokemon("Clefable", "Fairy", "Poison", "Moonblast", "Disarming Voice")
+Togekiss = pokemon.Pokemon("Togekiss", "Fairy", "Flying", "Fairy Wind", "Air Slash")
+Tinkaton = pokemon.Pokemon("Tinkaton", "Fairy", "Steel", "Play Rough", "Gigaton Hammer")
+
+#DRAGON POKEMON
+Garchomp = pokemon.Pokemon("Garchomp", "Dragon", "Ground", "Dragon Rush", "Dig")
+Dragonite = pokemon.Pokemon("Dragonite", "Dragon", "Flying", "Draco Meteor", "Hurricane")
+Haxorus = pokemon.Pokemon("Haxorus", "Dragon", "Dragon", "Outrage", "Dual Chop")
+
+#FIGHTING POKEMON
+Lucario = pokemon.Pokemon("Lucario", "Fighting", "Steel", "Aura Sphere", "Iron Tail")
+Medicham = pokemon.Pokemon("Medicham", "Fighting", "Psychic", "High Jump Kick", "Zen Headbutt")
+Machamp = pokemon.Pokemon("Machamp", "Fighting", "Fighting", "Dynamic Punch", "Cross Chop")
+
+#FLYING POKEMON
+Altaria = pokemon.Pokemon("Altaria", "Flying", "Dragon", "Sky Attack", "Dragon Pulse")
+Staraptor = pokemon.Pokemon("Staraptor", "Flying", "Normal", "Brave Bird", "Take Down")
+Drifblim = pokemon.Pokemon("Drifblim", "Flying", "Ghost", "Acrobatics", "Ominous Wind")
+
+#BUG POKEMON
+Accelgor = pokemon.Pokemon("Accelgor", "Bug", "Bug", "Bug Buzz", "Signal Beam")
+Yanmega = pokemon.Pokemon("Yanmega", "Bug", "Flying", "Bug Bite", "Air Cutter")
+Scizor = pokemon.Pokemon("Scizor", "Bug", "Steel", "X-Scissor", "Bullet Punch")
+
+#NORMAL POKEMON
+Porygon  = pokemon.Pokemon("Porygon", "Normal", "Normal", "Tri Attack", "Hyper Beam")
+Braviary = pokemon.Pokemon("Braviary", "Normal", "Flying", "Thrash", "Sky Drop")
+Diggersby = pokemon.Pokemon("Diggersby", "Normal", "Ground", "Giga Impact", "Scorching Sands")
+
+
+### EXTEND 6 INPUT POKEMON FROM AN INITIAL EMPTY LIST (POKEMON PARTY) ###
 #PLAYERS CREATED
 me = player.Player("Eli")
 me.party.extend([Venusaur, Infernape, Swampert]) ###
@@ -26,13 +101,19 @@ me.party.extend([Venusaur, Infernape, Swampert]) ###
 them = player.Player("Matthew")
 them.party.extend([Venusaur, Infernape, Swampert])  ###
 
+intro_string = "Welcome to Pokemon Battle Simulator!"
 #USER CHOOSES POKEMON
 user_pokemon_party = [Venusaur.name.lower(), Infernape.name.lower(), Swampert.name.lower()]
 
+print(intro_string)
 #GAMEPLAY BATTLE
 while len(me.party) != 0 and len(them.party) != 0:
-    user_pokemon_name_choice = input("Select a Pokemon to battle: ")
-    user_pokemon_choice = pokemon.Pokemon("Placeholder","Grass","Water")
+    user_pokemon_name_choice = input("Select your next Pokemon to battle: ")
+    ### INSTEAD OF "PLACEHOLDER", PROMPT THE USER TO INSERT A VALID POKEMON NAME IF 1 OF THE 3 POKEMON HAVE BEEN MISPELLED OR REPEATED (THEY HAVE ALREADY FAINTED) ###
+    # if user_pokemon_name_choice not in me.party:
+    #     print("There is an error in your Pokemon Name.")
+    #     user_pokemon_name_choice = input("Select your next Pokemon to battle: ")
+    user_pokemon_choice = pokemon.Pokemon("Pokemon", "type1", "type2", "attack1", "attack2")
     for p in me.party:
         if p.name == user_pokemon_name_choice:
             user_pokemon_choice = p
@@ -42,16 +123,25 @@ while len(me.party) != 0 and len(them.party) != 0:
 
     #BATTLE
     print("BATTLE!")
-    print(user_pokemon_choice.name, " used ", user_pokemon_choice.attack)
-    print(cpu_pokemon_choice.name, " used ", cpu_pokemon_choice.attack)
+    print("Your", user_pokemon_choice.name, "used", user_pokemon_choice.attack)
+    print("Their", cpu_pokemon_choice.name, "used", cpu_pokemon_choice.attack)
           
     winner, loser = user_pokemon_choice.battle(cpu_pokemon_choice)
-    print(winner.name, "has won the round.")
+      
+    #print(winner.name, "has won the round.")
 
     if loser in them.party:
         them.party.remove(loser)
-    elif loser in me.party:
+    if loser in me.party:
         me.party.remove(loser)
+
+
+if len(them.party) == 0:
+    print("Congratulations! You have won the game!")
+elif len(me.party) == 0:
+    print("You have no more Pokemon that can battle. You blacked out and rushed to a Pokecenter.")
+else:
+    print("There is an error.")
 
 # battle(cpu_pokemon_choice)
 
