@@ -179,12 +179,16 @@ while len(me.party) != 0 and len(them.party) != 0:
     #####FOR TESTING####
     ###TODO: Move and change
     cpu_pokemon_choice = random.choice(them.party)
-    print("The opponent has chosen", cpu_pokemon_choice.name)
+    print('')
+    print("The opponent has chosen...   ...", cpu_pokemon_choice.name)
+    print('')
 
     user_pokemon_name_choice = input("Select your next Pokemon to battle: ").lower()
     ### INSTEAD OF "PLACEHOLDER", PROMPT THE USER TO INSERT A VALID POKEMON NAME IF 1 OF THE 3 POKEMON HAVE BEEN MISPELLED OR REPEATED (THEY HAVE ALREADY FAINTED) ###
     while user_pokemon_name_choice not in me.names:
-        print("That Pokemon is not in your Party")
+        print('')
+        print("xxx That Pokemon is not in your Party! xxx")
+        print('')
         user_pokemon_name_choice = input("Select your next Pokemon to battle: ").lower()
     #user_pokemon_choice = pokemon.Pokemon("Pokemon", "type1", "type2", "attack1", "attack2")
     for p in me.party:
@@ -198,13 +202,16 @@ while len(me.party) != 0 and len(them.party) != 0:
 
     
     #BATTLE
+    print('')
     print("###############################")
     print("      ###################      ")
     print("            BATTLE!            ")
     print("      ###################      ")
     print("###############################")
+    print('')
     print("Your", user_pokemon_choice.name, "used", user_pokemon_choice.attack1)
     print("Their", cpu_pokemon_choice.name, "used", cpu_pokemon_choice.attack1)
+    print('')
           
     winner, loser = user_pokemon_choice.battle(cpu_pokemon_choice)
       
@@ -223,8 +230,14 @@ while len(me.party) != 0 and len(them.party) != 0:
 
 
 if len(them.party) == 0:
-    print("Congratulations! You have won the game!")
+    print('')
+    print('The opponent has no more Pokemon left that can battle!')
+    print("|||||||||| Congratulations! You have won the game! ||||||||||")
+    print('')
+    print('')
+    print('')
 elif len(me.party) == 0:
+    print('')
     print("You have no more Pokemon that can battle. You blacked out and rushed to a Pokecenter.")
 else:
     print("There is an error.")

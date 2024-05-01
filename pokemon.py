@@ -35,30 +35,38 @@ class Pokemon():
         if self.type1 in other.defeats1:
             winner = other
             loser = self
-            print("Their", winner.name, "has won the round.")
-            print("Your", loser.name, "has fainted." )
+            print("******** Their", winner.name, "has won the round. ********")
+            print("************ Your", loser.name, "has fainted. ************")
+            print('')
             return winner, loser
         elif other.type1 in self.defeats1:
             winner = self
             loser = other
-            print("Your", winner.name, "has won the round.")
+            print("~~~~~~~~ Your", winner.name, "has won the round. ~~~~~~~~")
+            print('')
+
             return winner, loser
         else:
             print("The Pokemon are evenly matched and attack again!")
+            print('')
             if self.type2 in other.defeats2:
                 winner = other
                 loser = self
                 print("Your", loser.name, "used", loser.attack2)
                 print("Their", winner.name, "used", winner.attack2)
-                print("Their", winner.name, "has won the round.")
-                print("Your", loser.name, "has fainted." )
+                print('')
+                print("******** Their", winner.name, "has won the round. ********")
+                print("************ Your", loser.name, "has fainted. ************" )
+                print('')
                 return winner, loser
             elif other.type2 in self.defeats2:
                 winner = self
                 loser = other
                 print("Your", winner.name, "used", winner.attack2)
                 print("Their", loser.name, "used", loser.attack2)
-                print("Your", winner.name, "has won the round.")
+                print('')
+                print("~~~~~~~~ Your", winner.name, "has won the round. ~~~~~~~~")
+                print('')
                 return winner, loser
             else:
                 result = [self, other]
@@ -68,16 +76,22 @@ class Pokemon():
                     loser = other
                     print("Your", winner.name, "used", winner.attack2)
                     print("Their", loser.name, "used", loser.attack2)
+                    print('')
                     print("It is still even! We'll see who's tougher...")
-                    print("Your", winner.name, "has won the round.")
+                    print('')
+                    print("~~~~~~~~ Your", winner.name, "has won the round. ~~~~~~~~")
+                    print('')
                 else:
                     winner = other
                     loser = self
                     print("Your", loser.name, "used", loser.attack2)
                     print("Their", winner.name, "used", winner.attack2)
+                    print('')
                     print("It is still even! We'll see who's tougher...")
-                    print("Their", winner.name, "has won the round")
-                    print("Your", loser.name, "has fainted." )
+                    print('')
+                    print("******** Their", winner.name, "has won the round ********")
+                    print("*********** Your", loser.name, "has fainted. ************" )
+                    print('')
 
             if winner == self:
                 return self, other
