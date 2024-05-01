@@ -198,8 +198,11 @@ while len(me.party) != 0 and len(them.party) != 0:
 
     
     #BATTLE
-    print("##########")
-    print("BATTLE!")
+    print("###############################")
+    print("      ###################      ")
+    print("            BATTLE!            ")
+    print("      ###################      ")
+    print("###############################")
     print("Your", user_pokemon_choice.name, "used", user_pokemon_choice.attack1)
     print("Their", cpu_pokemon_choice.name, "used", cpu_pokemon_choice.attack1)
           
